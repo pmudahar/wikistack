@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1>{{docs.title}}</h1>
+  <p>{{docs.body}}</p>
+  <p>{{docs.url_name}}</p>
+  <p><a class="btn btn-primary btn-lg" role="button" href="delete?url_name={{docs.url_name}}">Delete</a></p>
+</div>
+{% endblock %}

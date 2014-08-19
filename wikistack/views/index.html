@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	<div class = indexWrapper>
+
+		<h1>WIKISTACKS</h1>
+
+		{% if docs.length > 0 %}
+		<div class="row">
+		    {% for doc in docs %}
+
+			  <div class="col-sm-6 col-md-4">
+			    <div class="thumbnail">
+			      <div class="caption">
+			        <h3>{{doc | page_link}}</h3>
+			        <p>{{doc.body | word_count}}</p>
+			      </div>
+			    </div>
+			  </div>
+		    {% endfor %}
+
+		</div>
+		{% else %}
+		  There are no pages. Why dont you <a href='/add'>add one</a>?
+		{% endif %}
+
+	</div>
+
+{% endblock %}
